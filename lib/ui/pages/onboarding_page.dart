@@ -2,8 +2,28 @@ import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class Onboardingpage extends StatelessWidget {
+class Onboardingpage extends StatefulWidget {
   const Onboardingpage({super.key});
+
+  @override
+  State<Onboardingpage> createState() => _OnboardingpageState();
+}
+
+class _OnboardingpageState extends State<Onboardingpage> {
+  int currentIndex = 0;
+  CarouselController carouselController = CarouselController();
+
+  List<String> titles = [
+    'Grow Your\nFinancial Today',
+    'Build From\nZero to Freedom',
+    'Start Together',
+  ];
+
+  List<String> subtitles = [
+    'Our system is helping you to\nachieve a better goal',
+    'We provide tips for you so that\nyou can adapt easier',
+    'We will guide you to where\nyou wanted it too',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +52,13 @@ class Onboardingpage extends StatelessWidget {
                 height: 331,
                 viewportFraction: 1,
                 enableInfiniteScroll: false,
+                onPageChanged: (index, reason) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
               ),
+              carouselController: carouselController,
             ),
             const SizedBox(
               height: 80,
@@ -52,7 +78,7 @@ class Onboardingpage extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Grow Your\nFinancial Today',
+                    titles[currentIndex],
                     style: blackTextStyle.copyWith(
                       fontSize: 20,
                       fontWeight: semiBold,
@@ -63,7 +89,7 @@ class Onboardingpage extends StatelessWidget {
                     height: 26,
                   ),
                   Text(
-                    'Our system is helping you to\nachieve a better goal',
+                    subtitles[currentIndex],
                     style: greyTextStyle.copyWith(
                       fontSize: 16,
                     ),
@@ -82,7 +108,35 @@ class Onboardingpage extends StatelessWidget {
                         ),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: blueColor,
+                          color: currentIndex == 0
+                              ? blueColor
+                              : lightBackgroundColor,
+                        ),
+                      ),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: const EdgeInsets.only(
+                          right: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: currentIndex == 1
+                              ? blueColor
+                              : lightBackgroundColor,
+                        ),
+                      ),
+                      Container(
+                        width: 12,
+                        height: 12,
+                        margin: const EdgeInsets.only(
+                          right: 10,
+                        ),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: currentIndex == 2
+                              ? blueColor
+                              : lightBackgroundColor,
                         ),
                       ),
                       const Spacer(),
@@ -90,7 +144,9 @@ class Onboardingpage extends StatelessWidget {
                         width: 150,
                         height: 50,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            carouselController.nextPage();
+                          },
                           style: TextButton.styleFrom(
                             backgroundColor: purpleColor,
                             shape: RoundedRectangleBorder(
