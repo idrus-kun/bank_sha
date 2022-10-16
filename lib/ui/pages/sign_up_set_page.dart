@@ -1,12 +1,10 @@
-import 'dart:html';
-
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpSetProfilePage extends StatelessWidget {
+  const SignUpSetProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -47,48 +45,57 @@ class SignInPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // EMAIL INPUT DISINI GAESSS
-                const CustomFormField(
-                  title: 'Email Address',
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset('assets/ic_upload.png'),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        'assets/img_profile.png',
+                      ),
+                    ),
+                  ),
                 ),
-                // PASSWORD INPUT DISINI GAESSS
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
-                  title: 'Password',
-                  offsecureText: true,
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
+                Text(
+                  'fffffff',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
                   ),
                 ),
                 const SizedBox(
                   height: 30,
                 ),
+                CustomFormField(
+                  title: 'Set PIN (6 digit number)',
+                  offsecureText: true,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
                 CustomFilledButton(
-                  title: 'Sign in',
+                  title: 'Continue',
                   onPressed: () {},
                 ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextButton(
-            title: 'Create New Account',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
-            },
           ),
         ],
       ),

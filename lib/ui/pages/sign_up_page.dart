@@ -48,21 +48,21 @@ class SignUpPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // FULL NAME INPUT DISINI GAESSS
-                const CustomFormFilled(
+                const CustomFormField(
                   title: 'Full Name',
                 ),
                 // EMAIL INPUT DISINI GAESSS
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormFilled(
+                const CustomFormField(
                   title: 'Email Address',
                 ),
                 // PASSWORD INPUT DISINI GAESSS
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormFilled(
+                const CustomFormField(
                   title: 'Password',
                   offsecureText: true,
                 ),
@@ -71,6 +71,9 @@ class SignUpPage extends StatelessWidget {
                 ),
                 CustomFilledButton(
                   title: 'Continue',
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/sign-up-set-profile');
+                  },
                 ),
               ],
             ),
@@ -81,7 +84,7 @@ class SignUpPage extends StatelessWidget {
           CustomTextButton(
             title: 'Sign In',
             onPressed: () {
-              Navigator.pushNamed(context, '/signin');
+              Navigator.pushNamed(context, '/sign-in');
             },
           ),
         ],

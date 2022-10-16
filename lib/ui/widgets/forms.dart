@@ -1,12 +1,12 @@
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class CustomFormFilled extends StatelessWidget {
+class CustomFormField extends StatelessWidget {
   final String title;
   final bool offsecureText;
   final TextEditingController? controller;
 
-  const CustomFormFilled({
+  const CustomFormField({
     super.key,
     required this.title,
     this.offsecureText = false,
