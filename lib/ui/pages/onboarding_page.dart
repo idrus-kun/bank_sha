@@ -115,12 +115,7 @@ class _OnboardingpageState extends State<Onboardingpage> {
                               height: 24,
                               child: TextButton(
                                 onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const SignInPage(),
-                                    ),
-                                  );
+                                  Navigator.pushNamed(context, '/signin');
                                 },
                                 style: TextButton.styleFrom(
                                   padding: EdgeInsets.zero,
