@@ -1,12 +1,10 @@
-import 'dart:html';
-
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semiBold,
@@ -49,7 +47,14 @@ class SignInPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // FULL NAME INPUT DISINI GAESSS
+                const CustomFormFilled(
+                  title: 'Full Name',
+                ),
                 // EMAIL INPUT DISINI GAESSS
+                const SizedBox(
+                  height: 16,
+                ),
                 const CustomFormFilled(
                   title: 'Email Address',
                 ),
@@ -62,21 +67,10 @@ class SignInPage extends StatelessWidget {
                   offsecureText: true,
                 ),
                 const SizedBox(
-                  height: 8,
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
-                  ),
-                ),
-                const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
-                  title: 'Sign in',
-                  onPressed: () {},
+                  title: 'Continue',
                 ),
               ],
             ),
@@ -85,8 +79,10 @@ class SignInPage extends StatelessWidget {
             height: 50,
           ),
           CustomTextButton(
-            title: 'Create New Account',
-            onPressed: () {},
+            title: 'Sign In',
+            onPressed: () {
+              Navigator.pushNamed(context, '/signin');
+            },
           ),
         ],
       ),
