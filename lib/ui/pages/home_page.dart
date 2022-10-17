@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/home_service_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -275,8 +276,33 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 16,
+            height: 14,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              HomeServiceItem(
+                iconUrl: 'assets/ic_topup.png',
+                title: 'Top up',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_send.png',
+                title: 'Send',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_withdraw.png',
+                title: 'Withdraw',
+                onTap: () {},
+              ),
+              HomeServiceItem(
+                iconUrl: 'assets/ic_more.png',
+                title: 'More',
+                onTap: () {},
+              ),
+            ],
+          )
         ],
       ),
     );
