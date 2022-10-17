@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:bank_sha/shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -78,6 +80,7 @@ class HomePage extends StatelessWidget {
         ),
         children: [
           buildProfile(),
+          buildWalletCard(),
         ],
       ),
     );
@@ -140,6 +143,61 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildWalletCard() {
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(28),
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(
+            'assets/img_bg_card.png',
+          ),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Shyamaa nene',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+            ),
+          ),
+          const SizedBox(
+            height: 28,
+          ),
+          Text(
+            '**** ***** **** 1280',
+            style: whiteTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: medium,
+              letterSpacing: 6,
+            ),
+          ),
+          const SizedBox(
+            height: 21,
+          ),
+          Text(
+            'Balance',
+            style: whiteTextStyle,
+          ),
+          Text(
+            'Rp 12.500',
+            style: whiteTextStyle.copyWith(
+              fontSize: 24,
+              fontWeight: semiBold,
             ),
           ),
         ],
