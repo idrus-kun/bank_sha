@@ -81,7 +81,8 @@ class HomePage extends StatelessWidget {
         children: [
           buildProfile(),
           buildWalletCard(),
-          buildlevel(),
+          buildLevel(),
+          buildServices(),
         ],
       ),
     );
@@ -206,7 +207,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildlevel() {
+  Widget buildLevel() {
     return Container(
       margin: const EdgeInsets.only(
         top: 20,
@@ -252,6 +253,29 @@ class HomePage extends StatelessWidget {
               valueColor: AlwaysStoppedAnimation(greenColor),
               backgroundColor: lightBackgroundColor,
             ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildServices() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Do Something : ',
+            style: blackTextStyle.copyWith(
+              fontSize: 18,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 16,
           ),
         ],
       ),
