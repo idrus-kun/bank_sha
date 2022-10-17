@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/home_latest_transactions_item.dart';
 import 'package:bank_sha/ui/widgets/home_service_item.dart';
+import 'package:bank_sha/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -85,6 +86,8 @@ class HomePage extends StatelessWidget {
           buildWalletCard(),
           buildLevel(),
           buildServices(),
+          buildLatestTransaction(),
+          buildSendAgain()
         ],
       ),
     );
@@ -326,9 +329,7 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(122),
-            margin: const EdgeInsets.only(
-              top: 14,
-            ),
+            margin: const EdgeInsets.only(top: 14),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
@@ -359,6 +360,52 @@ class HomePage extends StatelessWidget {
                   time: 'Aug 27',
                   title: 'Electric',
                   value: '- 123.500',
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildSendAgain() {
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 30,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Text(
+            'Send Again',
+            style: blackTextStyle.copyWith(
+              fontSize: 16,
+              fontWeight: semiBold,
+            ),
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: const [
+                HomeUserItem(
+                  imagerUrl: 'assets/img_friend1.png',
+                  username: 'yuanita',
+                ),
+                HomeUserItem(
+                  imagerUrl: 'assets/img_friend2.png',
+                  username: 'jaini',
+                ),
+                HomeUserItem(
+                  imagerUrl: 'assets/img_friend3.png',
+                  username: 'urip',
+                ),
+                HomeUserItem(
+                  imagerUrl: 'assets/img_friend4.png',
+                  username: 'masa',
                 ),
               ],
             ),
