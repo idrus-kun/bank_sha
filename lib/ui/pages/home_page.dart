@@ -421,6 +421,7 @@ class HomePage extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(
         top: 30,
+        bottom: 50,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -435,10 +436,31 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const HomeTipsItem(
-            imageUrl: 'assets/img_tips1.png',
-            title: 'Best tips for using a credit card',
-            url: 'https://github.com/idrus-kun',
+          Wrap(
+            spacing: 17,
+            runSpacing: 18,
+            children: const [
+              HomeTipsItem(
+                imageUrl: 'assets/img_tips1.png',
+                title: 'Best tips for using a credit card',
+                url: 'https://github.com/idrus-kun',
+              ),
+              HomeTipsItem(
+                imageUrl: 'assets/img_tips2.png',
+                title: 'Spot the good pie of finance model',
+                url: 'https://github.com/idrus-kun',
+              ),
+              HomeTipsItem(
+                imageUrl: 'assets/img_tips3.png',
+                title: 'Great hack to get better advices',
+                url: 'https://github.com/idrus-kun',
+              ),
+              HomeTipsItem(
+                imageUrl: 'assets/img_tips4.png',
+                title: 'Save more penny buy this instead',
+                url: 'https://github.com/idrus-kun',
+              ),
+            ],
           ),
         ],
       ),

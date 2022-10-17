@@ -49,7 +49,9 @@ class HomeTipsItem extends StatelessWidget {
               title,
               style: blackTextStyle.copyWith(
                 fontWeight: medium,
+                overflow: TextOverflow.ellipsis,
               ),
+              maxLines: 2,
             ),
           ),
         ],
