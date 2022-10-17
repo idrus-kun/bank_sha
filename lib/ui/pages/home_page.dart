@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:bank_sha/shared/theme.dart';
+import 'package:bank_sha/ui/widgets/home_latest_transactions_item.dart';
 import 'package:bank_sha/ui/widgets/home_service_item.dart';
 import 'package:flutter/material.dart';
 
@@ -331,6 +332,35 @@ class HomePage extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat1.png',
+                  time: 'Yesterday',
+                  title: 'Top Up',
+                  value: '+ 450.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat2.png',
+                  time: 'Sep 11',
+                  title: 'Withdraw',
+                  value: '+ 22.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat3.png',
+                  time: 'Sep 2',
+                  title: 'Transfer',
+                  value: '- 5.000',
+                ),
+                HomeLatestTransactionItem(
+                  iconUrl: 'assets/ic_transaction_cat4.png',
+                  time: 'Aug 27',
+                  title: 'Electric',
+                  value: '- 123.500',
+                ),
+              ],
             ),
           ),
         ],
