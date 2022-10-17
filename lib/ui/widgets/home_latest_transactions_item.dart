@@ -12,6 +12,7 @@ class HomeLatestTransactionItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(
         bottom: 18,
+        k,
       ),
     );
   }
