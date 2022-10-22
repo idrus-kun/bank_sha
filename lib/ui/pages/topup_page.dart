@@ -80,6 +80,7 @@ class TopupPage extends StatelessWidget {
           const BankItem(
             ImageUrl: 'assets/img_bank_bca.png',
             title: 'BANK BCA',
+            isSelected: true,
           ),
           const BankItem(
             ImageUrl: 'assets/img_bank_bni.png',
@@ -98,7 +99,9 @@ class TopupPage extends StatelessWidget {
           ),
           CustomFilledButton(
             title: 'Continue',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/topup-amount');
+            },
           ),
           const SizedBox(
             height: 57,
