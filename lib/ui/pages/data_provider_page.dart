@@ -77,7 +77,29 @@ class DataProviderPage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const DataProviderItem(),
+          const DataProviderItem(
+            name: 'Telkomsel',
+            imageUrl: 'assets/img_provider_telkomsel.png',
+            isSelected: true,
+          ),
+          const DataProviderItem(
+            name: 'Indosat Ooredoo',
+            imageUrl: 'assets/img_provider_indosat.png',
+          ),
+          const DataProviderItem(
+            name: 'Singtel ID',
+            imageUrl: 'assets/img_provider_singtel.png',
+          ),
+          const SizedBox(
+            height: 135,
+          ),
+          CustomFilledButton(
+            title: 'Continue',
+            onPressed: () {},
+          ),
+          const SizedBox(
+            height: 57,
+          ),
         ],
       ),
     );
