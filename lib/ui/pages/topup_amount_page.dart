@@ -209,6 +209,7 @@ class _TopUpAmountPageState extends State<TopUpAmountPage> {
             title: 'Checkout Now',
             onPressed: () async {
               if (await Navigator.pushNamed(context, '/pin') == true) {
+                await launch('https://demo.midtrans.com/');
                 Navigator.pushNamedAndRemoveUntil(
                     context, '/topup-success', (route) => false);
               }
