@@ -1,10 +1,15 @@
+import 'package:bank_sha/models/sign_up_form_model.dart';
 import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 
 class SignUpSetKtpPage extends StatelessWidget {
-  const SignUpSetKtpPage({super.key});
+  final SignUpFormModel data;
+  const SignUpSetKtpPage({
+    required this.data,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

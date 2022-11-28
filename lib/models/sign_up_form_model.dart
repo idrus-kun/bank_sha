@@ -30,6 +30,7 @@ class SignUpFormModel {
     String? pin,
     String? profil_page,
     String? ktp,
+    String? profilePicture,
   }) =>
       SignUpFormModel(
         name: name,
