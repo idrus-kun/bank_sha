@@ -11,9 +11,9 @@ class SignUpSetKtpPage extends StatefulWidget {
   final SignUpFormModel data;
 
   const SignUpSetKtpPage({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   State<SignUpSetKtpPage> createState() => _SignUpSetKtpPageState();
