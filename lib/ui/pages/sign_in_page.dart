@@ -1,20 +1,14 @@
-import 'dart:html';
 import 'package:bank_sha/blocs/auth/auth_bloc.dart';
 import 'package:bank_sha/models/sign_in_form_model.dart';
 import 'package:bank_sha/shared/shared_methods.dart';
 import 'package:bank_sha/shared/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:http/retry.dart';
-import 'package:bank_sha/shared/theme.dart';
 import 'package:bank_sha/ui/widgets/button.dart';
 import 'package:bank_sha/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({
-    super.key,
-  });
+  const SignInPage({super.key});
 
   @override
   State<SignInPage> createState() => _SignInPageState();
@@ -99,7 +93,7 @@ class _SignInPageState extends State<SignInPage> {
                   // NOTE: PASSWORD INPUT
                   CustomFormField(
                     title: 'Password',
-                    obscureText: true,
+                    offsecureText: true,
                     controller: passwordController,
                   ),
                   const SizedBox(
